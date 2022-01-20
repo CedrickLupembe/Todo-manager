@@ -1,0 +1,50 @@
+
+// global variables
+$family: 'Josefin Sans', sans-serif;
+
+// media query
+$mobile: 480px;
+$tablette: 768px;
+$laptop: 1024px;
+$desktop: 1200px;
+
+
+html{
+    --bg-secondary: #f0f0f0;
+    --medium-color: #fff;
+    --done-color: #f0f0f0;
+    --date-color: #8f8c8c;
+    --primary-color: #000;
+
+    --text-normal: #fafaf9;
+    --task-content: #000;
+    --complete-color: #8f8c8c;
+    --delete-color: #888787;
+
+
+    --theme-secondary-color: #7c5df9;
+}
+
+// Dark
+html[data-theme='dark']{
+
+    --bg-secondary: #141625;
+    --medium-color: #1f213a;
+    --done-color: #878ab3;
+    --date-color: #8f8c8c;
+    --primary-color: #fafaf9;
+
+    --title: #fafaf9;
+    --text-normal: #fafaf9;
+    --task-content: #fafaf9;
+    --complete-color: #868cb5;
+    --delete-color: #868cb5;
+
+    --theme-secondary-color: #7c5df9;
+}
+
+
+
+
+
+

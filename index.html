@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Primary Meta Tags -->
+    <title>TrackMe</title>
+    <meta name="title" content="TrackMe">
+    <meta name="description" content="A dynamic and aesthetic Tasks tracker app built with HTML, Saas, Vanilla JavaScript, all contributors are most welcome! This is definitely open-source on Github">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://TrackMe.netlify.com">
+    <meta property="og:title" content="TrackMe">
+    <meta property="og:description" content="A dynamic and aesthetic Tasks tracker app built with HTML, Saas, Vanilla JavaScript, all contributors are most welcome! This is definitely open-source on Github">
+    <meta property="og:image" content="./Assets/ToDoLists.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://TrackMe.netlify.com">
+    <meta property="twitter:title" content="TrackMe">
+    <meta property="twitter:description" content="A dynamic and aesthetic Tasks tracker app built with HTML, Saas, Vanilla JavaScript, all contributors are most welcome! This is definitely open-source on Github">
+    <meta property="twitter:image" content="./Assets/ToDoLists.jpg">
+
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./Assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./Assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./Assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./Assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="./Assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- font awesone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- css link -->
+    <link rel="stylesheet" href="./Styles/style.css">
+
+</head>
+<body>
+    
+    <div class="Container">
+
+
+        <header class="Header-block">
+            <div class="Title-date">
+                <h1>Todo Manager</h1>
+                <span class="date-section"></span>
+            </div>
+
+            <div class="search-bar">
+                <button class="BtnTheme"><i class="fas fa-moon"></i></button>
+                <form class="search-form">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search">
+                </form>
+            </div>
+        </header>
+
+        <section class="Contents">
+            <ul class="List-tasks">
+                <li>
+                    <div class="check-todo">
+                        <span class="complete">Implementing design.</span>
+                    </div>
+
+                    <span>
+                        <button class="delete"><i class="far fa-trash-alt"></i></button>
+                    </span>
+                </li>
+
+            </ul>
+
+            <form class="Add-form">
+                <label for="Todo">Add a new task</label>
+                <div class="inputFields">
+                    <input type="text" autocomplete="off" id="Todo" placeholder="Enter a task here..." class="inpValue">
+                    <input type="submit" class="submit" value="Add">
+                </div>
+            </form>
+        </section>
+
+
+
+
+
+    </div>
+
+
+    <script src="./JS/app.js"></script>
+</body>
+</html>
