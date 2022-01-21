@@ -1,0 +1,636 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+html {
+  --bg-secondary: #f0f0f0;
+  --medium-color: #fff;
+  --done-color: #f0f0f0;
+  --date-color: #8f8c8c;
+  --primary-color: #000;
+  --text-normal: #fafaf9;
+  --task-content: #000;
+  --complete-color: #8f8c8c;
+  --delete-color: #888787;
+  --theme-secondary-color: #7c5df9;
+}
+
+html[data-theme='dark'] {
+  --bg-secondary: #141625;
+  --medium-color: #1f213a;
+  --done-color: #878ab3;
+  --date-color: #8f8c8c;
+  --primary-color: #fafaf9;
+  --title: #fafaf9;
+  --text-normal: #fafaf9;
+  --task-content: #fafaf9;
+  --complete-color: #868cb5;
+  --delete-color: #868cb5;
+  --theme-secondary-color: #7c5df9;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  background-color: var(--bg-secondary);
+}
+
+.Container {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 30px 0;
+}
+
+.Container .Header-block {
+  width: 900px;
+  height: auto;
+  padding: 20px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Container .Header-block .Title-date h1 {
+  margin-bottom: 5px;
+  color: var(--primary-color);
+}
+
+.Container .Header-block .Title-date span {
+  margin-left: 5px;
+  color: var(--complete-color);
+  font-size: 13px;
+}
+
+.Container .Header-block .search-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5px 30px;
+  position: relative;
+}
+
+.Container .Header-block .search-bar button {
+  padding: 13px 14px;
+  background-color: var(--medium-color);
+  border-radius: 50%;
+  margin-right: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.Container .Header-block .search-bar button i {
+  font-size: 15px;
+  color: var(--delete-color);
+}
+
+.Container .Header-block .search-bar .search-form {
+  width: auto;
+  height: auto;
+  position: relative;
+  padding: 5px 15px;
+  border-radius: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: var(--theme-secondary-color);
+  color: var(--text-normal);
+}
+
+.Container .Header-block .search-bar .search-form i {
+  color: var(--text-normal);
+}
+
+.Container .Header-block .search-bar .search-form input {
+  padding: 10px 10px;
+  outline: none;
+  border: none;
+  color: var(--title);
+  font-size: 15px;
+  background-color: var(--theme-secondary-color);
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.Container .Header-block .search-bar .search-form input::-webkit-input-placeholder {
+  color: var(--text-normal);
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.Container .Header-block .search-bar .search-form input:-ms-input-placeholder {
+  color: var(--text-normal);
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.Container .Header-block .search-bar .search-form input::-ms-input-placeholder {
+  color: var(--text-normal);
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.Container .Header-block .search-bar .search-form input::placeholder {
+  color: var(--text-normal);
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.Container .Contents {
+  width: 900px;
+  height: auto;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.Container .Contents ul {
+  width: 100%;
+  height: auto;
+}
+
+.Container .Contents ul li {
+  width: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px 25px;
+  background-color: var(--medium-color);
+  margin-top: 10px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034);
+          box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034);
+}
+
+.Container .Contents ul li .complete {
+  cursor: pointer;
+  -webkit-transition: all .7s ease-in-out;
+  transition: all .7s ease-in-out;
+  color: var(--task-content);
+}
+
+.Container .Contents ul li .complete.active {
+  text-decoration: line-through;
+  color: var(--complete-color);
+}
+
+.Container .Contents ul li button {
+  border: none;
+  padding: 10px 12px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.Container .Contents ul li button i {
+  font-size: 15px;
+  pointer-events: none;
+  color: var(--delete-color);
+}
+
+.Container .Contents ul .Filtered {
+  display: none !important;
+}
+
+.Container .Contents .Add-form {
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px 0;
+}
+
+.Container .Contents .Add-form label {
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--title);
+}
+
+.Container .Contents .Add-form .inpValue {
+  width: 80%;
+  padding: 13px 20px;
+  outline: none;
+  border: 2px solid var(--theme-secondary-color);
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 15px;
+  background-color: var(--medium-color);
+  color: var(--title);
+}
+
+.Container .Contents .Add-form .inputFields {
+  width: inherit;
+  height: auto;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Container .Contents .Add-form .inputFields .inpValue::-webkit-input-placeholder {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 15px;
+  color: var(--complete-color);
+}
+
+.Container .Contents .Add-form .inputFields .inpValue:-ms-input-placeholder {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 15px;
+  color: var(--complete-color);
+}
+
+.Container .Contents .Add-form .inputFields .inpValue::-ms-input-placeholder {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 15px;
+  color: var(--complete-color);
+}
+
+.Container .Contents .Add-form .inputFields .inpValue::placeholder {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 15px;
+  color: var(--complete-color);
+}
+
+.Container .Contents .Add-form .inputFields .submit {
+  width: 18%;
+  margin-left: 15px;
+  padding: 14px 20px;
+  background-color: var(--theme-secondary-color);
+  color: var(--text-normal);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+html {
+  --bg-secondary: #f0f0f0;
+  --medium-color: #fff;
+  --done-color: #f0f0f0;
+  --date-color: #8f8c8c;
+  --primary-color: #000;
+  --text-normal: #fafaf9;
+  --task-content: #000;
+  --complete-color: #8f8c8c;
+  --delete-color: #888787;
+  --theme-secondary-color: #7c5df9;
+}
+
+html[data-theme='dark'] {
+  --bg-secondary: #141625;
+  --medium-color: #1f213a;
+  --done-color: #878ab3;
+  --date-color: #8f8c8c;
+  --primary-color: #fafaf9;
+  --title: #fafaf9;
+  --text-normal: #fafaf9;
+  --task-content: #fafaf9;
+  --complete-color: #868cb5;
+  --delete-color: #868cb5;
+  --theme-secondary-color: #7c5df9;
+}
+
+@media (max-width: 480px) {
+  .Container {
+    position: relative;
+  }
+  .Container .Header-block {
+    width: 100%;
+    height: auto;
+    padding: 5px 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .Container .Header-block .Title-date {
+    line-height: 15px;
+  }
+  .Container .Header-block .Title-date h1 {
+    margin-bottom: 5px;
+    color: var(--primary-color);
+    font-size: 23px;
+  }
+  .Container .Header-block .Title-date span {
+    margin-left: 5px;
+    color: var(--complete-color);
+    font-size: 10px;
+  }
+  .Container .Header-block .search-bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    padding: 3px;
+    position: relative;
+  }
+  .Container .Header-block .search-bar button {
+    padding: 12px 13px;
+    margin-right: 5px;
+  }
+  .Container .Header-block .search-bar button i {
+    font-size: 13px;
+    color: var(--delete-color);
+  }
+  .Container .Header-block .search-bar .search-form {
+    width: 100px;
+    padding: 7px 15px;
+  }
+  .Container .Header-block .search-bar .search-form i {
+    font-size: 12px;
+  }
+  .Container .Header-block .search-bar .search-form input {
+    width: 100%;
+    padding: 7px 5px;
+    font-size: 12px;
+  }
+  .Container .Header-block .search-bar .search-form input::-webkit-input-placeholder {
+    font-size: 11px;
+  }
+  .Container .Header-block .search-bar .search-form input:-ms-input-placeholder {
+    font-size: 11px;
+  }
+  .Container .Header-block .search-bar .search-form input::-ms-input-placeholder {
+    font-size: 11px;
+  }
+  .Container .Header-block .search-bar .search-form input::placeholder {
+    font-size: 11px;
+  }
+  .Container .Contents {
+    width: 100%;
+    padding: 0px 15px;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 481px) {
+  .Container {
+    position: relative;
+    padding: 10px 30px;
+  }
+  .Container .Header-block {
+    width: 100%;
+    height: auto;
+    padding: 20px 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .Container .Header-block .Title-date h1 {
+    margin-bottom: 5px;
+    color: var(--primary-color);
+    font-size: 40px;
+  }
+  .Container .Header-block .Title-date span {
+    margin-left: 5px;
+    color: var(--complete-color);
+    font-size: 15px;
+  }
+  .Container .Header-block .search-bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 5px 30px;
+    position: relative;
+  }
+  .Container .Header-block .search-bar button {
+    padding: 16px 17px;
+    background-color: var(--medium-color);
+    border-radius: 50%;
+    margin-right: 20px;
+    border: none;
+    cursor: pointer;
+  }
+  .Container .Header-block .search-bar button i {
+    font-size: 17px;
+    color: var(--delete-color);
+  }
+  .Container .Header-block .search-bar .search-form {
+    width: auto;
+    height: auto;
+    position: relative;
+    padding: 5px 15px;
+    border-radius: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: var(--theme-secondary-color);
+    color: var(--text-normal);
+  }
+  .Container .Header-block .search-bar .search-form i {
+    color: var(--text-normal);
+  }
+  .Container .Contents {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 20px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0 30px;
+  }
+  .Container .Contents ul {
+    width: 100%;
+    height: auto;
+  }
+  .Container .Contents ul li {
+    width: inherit;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 10px 25px;
+    background-color: var(--medium-color);
+    margin-top: 10px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034);
+            box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034);
+  }
+  .Container .Contents ul li .complete {
+    cursor: pointer;
+    -webkit-transition: all .7s ease-in-out;
+    transition: all .7s ease-in-out;
+    color: var(--task-content);
+  }
+  .Container .Contents ul li .complete.active {
+    text-decoration: line-through;
+    color: var(--complete-color);
+  }
+  .Container .Contents ul li button {
+    border: none;
+    padding: 10px 12px;
+    cursor: pointer;
+    background-color: transparent;
+  }
+  .Container .Contents ul li button i {
+    font-size: 15px;
+    pointer-events: none;
+    color: var(--delete-color);
+  }
+  .Container .Contents .Add-form {
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin-top: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 10px 0;
+  }
+  .Container .Contents .Add-form label {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--title);
+  }
+  .Container .Contents .Add-form .inpValue {
+    width: 80%;
+    padding: 13px 20px;
+    outline: none;
+    border: 2px solid var(--theme-secondary-color);
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: 15px;
+    background-color: var(--medium-color);
+    color: var(--title);
+  }
+  .Container .Contents .Add-form .inputFields {
+    width: inherit;
+    height: auto;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .Container .Contents .Add-form .inputFields .inpValue::-webkit-input-placeholder {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 15px;
+    color: var(--complete-color);
+  }
+  .Container .Contents .Add-form .inputFields .inpValue:-ms-input-placeholder {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 15px;
+    color: var(--complete-color);
+  }
+  .Container .Contents .Add-form .inputFields .inpValue::-ms-input-placeholder {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 15px;
+    color: var(--complete-color);
+  }
+  .Container .Contents .Add-form .inputFields .inpValue::placeholder {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 15px;
+    color: var(--complete-color);
+  }
+  .Container .Contents .Add-form .inputFields .submit {
+    width: 18%;
+    margin-left: 15px;
+    padding: 14px 20px;
+    background-color: var(--theme-secondary-color);
+    color: var(--text-normal);
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    font-family: "Josefin Sans", sans-serif;
+  }
+}
+/*# sourceMappingURL=style.css.map */
