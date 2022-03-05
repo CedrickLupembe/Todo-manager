@@ -2,6 +2,8 @@
 
 ![User Interface](https://github.com/CedrickLupembe/Todo-manager/blob/main/screenshots/light.PNG)
 
+A dynamic and aesthetic Todo-manager built with HTML, CSS, Vanilla JavaScript.
+
 *This web app is hosted with [vercel](https://vercel.com/).*
 
 ### ***Features:***
